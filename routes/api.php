@@ -17,6 +17,7 @@ Route::prefix('place')->name('place-')->group(function () {
 Route::prefix('order')->name('order-')->group(function () {
     Route::get('', [OrderController::class, 'index'])->name('index');
     Route::get('{order}', [OrderController::class, 'show'])->whereNumber('order')->name('show');
+    Route::post('', [OrderController::class, 'create'])->name('create');
 });
 
 
