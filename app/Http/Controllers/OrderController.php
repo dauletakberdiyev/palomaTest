@@ -13,7 +13,7 @@ final class OrderController extends Controller
 {
     public function index(): JsonResponse
     {
-        $orders = Order::all()->load('place');
+        $orders = Order::all()->load(['place', 'orderDetails.product:id,title']);
 
         return response()->json([
             'message' => 'All orders retrieved successfully.',

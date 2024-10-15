@@ -13,7 +13,7 @@ final class CategoryController extends Controller
 
         return response()->json([
             'message' => 'Categories successfully retrieved',
-            'data' => $categories
+            'data' => $categories->load('products')
         ]);
     }
 
